@@ -1,8 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Comfortaa } from 'next/font/google'
+import theme from '../theme/theme'
+import ThemeProvider from '../libraries/themeProvider'
 
-const inter = Inter({ subsets: ['latin'] })
+const comfortaa = Comfortaa({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <ThemeProvider theme={theme}>
+      <body >{children}</body>
+      </ThemeProvider>
     </html>
+    </>
   )
 }
