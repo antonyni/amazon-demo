@@ -11,7 +11,7 @@ let lastEventTime = 0;
 let pressed = false;
 const numberTileMaker = (left,top) =>{
     return(
-        [<Image src="/numbers.png" width={500} height={500} style={{ width: "700px", height: "auto", position: "absolute", left: `${left}px`, top: `${top}px` }}></Image>]
+        [<Image key={left.toString()+top.toString()} src="/numbers.png" width={500} height={500} style={{ width: "700px", height: "auto", position: "absolute", left: `${left}px`, top: `${top}px` }}></Image>]
     )
 }
 const ZERO = numberTileMaker(2,-22);

@@ -4,7 +4,7 @@ import { useEffect, useState} from 'react';
 const outerClock = [];
 for (let i = 0; i < 12; i++) {
     outerClock.push(
-        <Box sx={{ width: "76%", height: "100%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 30}deg)`, display: 'flex', alignItems: 'center' }}>
+        <Box key={i} sx={{ width: "76%", height: "100%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 30}deg)`, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ height: "100%", width: "100%", display: "flex", alignItems: "center", backgroundColor: "none" }}>
                 <Box sx={{ width:i%3==0?"15px":"6px", height: i%3==0?"15px":"6px", borderRadius:"50%",backgroundColor:i%3==0?"white":"lightgrey" }}></Box>
             </Box>
@@ -137,7 +137,7 @@ const AnalogClock = ({ time }) => {
             <Box sx={{ overflowX: "visible", position: "relative", width: "100vw", height: "100vh", backgroundColor: "none", display: "flex", justifyContent: "center", alignItems: "center", flexShrink: 0 }}>
             
                 <Box sx={{ position: "relative", height: 614.8, width: 614.8, display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", backgroundColor: "none" }}>
-                    <Box className="rotate" sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }]}>
+                    <Box  sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }]}>
                         {outerClock}
 
 

@@ -5,7 +5,7 @@ const outerClock = [];
 const innerClock = [];
 for (let i = 0; i < 60; i++) {
     innerClock.push(
-        <Box sx={{ width: "63%", height: "63%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 6}deg)`, color: "blue", display: 'flex', alignItems: 'center' }}>
+        <Box key={i} sx={{ width: "63%", height: "63%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 6}deg)`, color: "blue", display: 'flex', alignItems: 'center' }}>
             <Box sx={{ height: "100%", width: "100%", display: "flex", alignItems: "center", backgroundColor: "none" }}>
                 <Box sx={{ width: "3.20%", height: "41.8%", backgroundColor: "#434343" }}></Box>
                 {i % 5 == 0 ?
@@ -20,7 +20,7 @@ for (let i = 0; i < 60; i++) {
 }
 for (let i = 0; i < 60; i++) {
     outerClock.push(
-        <Box sx={{ width: "100%", height: "100%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 6}deg)`, color: "blue", display: 'flex', alignItems: 'center' }}>
+        <Box key={i} sx={{ width: "100%", height: "100%", backgroundColor: "none    ", position: "absolute", transform: `rotate(-${i * 6}deg)`, color: "blue", display: 'flex', alignItems: 'center' }}>
             <Box sx={{ height: "100%", width: "100%", display: "flex", alignItems: "center", backgroundColor: "none" }}>
                 <Box sx={{ width: "2.05%", height: "23.4%", backgroundColor: "#434343" }}></Box>
                 {i % 5 == 0 ?
@@ -133,12 +133,12 @@ const WheelClock = ({ time,mode }) => {
                     </Box>
                 </Box>
                 <Box sx={{ position: "relative", height: 614.8, width: 614.8, display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", backgroundColor: "none" }}>
-                    <Box className="rotate" sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }, rotateSeconds.sx]}>
+                    <Box  sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }, rotateSeconds.sx]}>
                         {outerClock}
 
 
                     </Box>
-                    <Box className="rotate" sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }, rotateMinutes.sx]}>
+                    <Box  sx={[{ display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", width: 614.8 / 1, height: 12.8 / 1,  cursor: "pointer" }, rotateMinutes.sx]}>
                         {innerClock}
 
                     </Box>
